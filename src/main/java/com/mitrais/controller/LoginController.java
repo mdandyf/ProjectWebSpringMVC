@@ -22,7 +22,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
-    public String loginUser(@ModelAttribute("SpringWeb")User user,
+    public String loginUser(@ModelAttribute("user")User user,
                             ModelMap model) {
         model.addAttribute("userName", user.getUserName());
         model.addAttribute("userPass", user.getUserPass());
