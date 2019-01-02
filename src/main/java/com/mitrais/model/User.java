@@ -1,5 +1,9 @@
 package com.mitrais.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.util.Date;
+
 public class User {
     private String userName;
     private String userPass;
@@ -8,6 +12,9 @@ public class User {
     private String userNationality;
     private boolean receivePaper;
     private String[] knownFramework;
+
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
+    private Date joinDate;
 
     public String getUserName() {
         return userName;
@@ -63,6 +70,14 @@ public class User {
 
     public void setKnownFramework(String[] knownFramework) {
         this.knownFramework = knownFramework;
+    }
+
+    public Date getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(Date joinDate) {
+        this.joinDate = joinDate;
     }
 
 }

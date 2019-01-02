@@ -1,17 +1,17 @@
 package com.mitrais.controller;
 
 import com.mitrais.model.User;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Controller
 public class LoginController {
@@ -22,7 +22,7 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/loginUser", method = RequestMethod.POST)
-    public String loginUser(@ModelAttribute("SpringWeb")User user,
+    public String loginUser(@ModelAttribute("command") @Validated User user,
                             ModelMap model) {
         model.addAttribute("userName", user.getUserName());
         model.addAttribute("userPass", user.getUserPass());
@@ -31,6 +31,7 @@ public class LoginController {
         model.addAttribute("userNationality", user.getUserNationality());
         model.addAttribute("receivePaper", user.isReceivePaper());
         model.addAttribute("knownFramework", user.getKnownFramework());
+        model.addAttribute("joinDate", user.getJoinDate());
         return "loginuser";
     }
 

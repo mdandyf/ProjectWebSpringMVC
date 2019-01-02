@@ -30,6 +30,10 @@
             <td>${userNationality}</td>
         </tr>
         <tr>
+            <td>Join Date</td>
+            <td>${joinDate}</td>
+        </tr>
+        <tr>
             <td>Comment</td>
             <td>${userComment}</td>
         </tr>

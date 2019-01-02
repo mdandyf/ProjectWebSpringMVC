@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HelloController {
 
-    String message = "Hello Spring MVC Framework!";
+    String message = "Hello from Spring MVC Framework!";
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public ModelAndView showMessage(
