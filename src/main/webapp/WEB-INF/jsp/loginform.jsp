@@ -1,4 +1,3 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: Dandy_F122
@@ -6,10 +5,24 @@
   Time: 8:55
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Login Form</title>
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <%-- This is for all theme related css and js using spring framework --%>
+    <spring:url value="/resources/js/scripts.js" var="scriptJs" />
+    <script src="${scriptJs}"></script>
+    <spring:url value="/resources/css/styles.css" var="styleCss" />
+    <style src="${styleCss}"></style>
 </head>
 <body>
     <h2>User Information</h2>
@@ -37,6 +50,12 @@
                         <form:option value="NONE" label="Select"/>
                         <form:options items="${nationality}"/>
                     </form:select>
+                </td>
+            </tr>
+            <tr>
+                <td><form:label path="joinDate"> Join Date</form:label></td>
+                <td>
+                    <form:input type="text" id="joinDate" name="joinDate" path="joinDate"/>
                 </td>
             </tr>
             <tr>

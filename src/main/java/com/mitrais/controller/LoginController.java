@@ -31,6 +31,7 @@ public class LoginController {
         model.addAttribute("userNationality", user.getUserNationality());
         model.addAttribute("receivePaper", user.isReceivePaper());
         model.addAttribute("knownFramework", user.getKnownFramework());
+        model.addAttribute("joinDate", user.getJoinDate());
         return "loginuser";
     }
 

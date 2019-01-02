@@ -18,9 +18,15 @@
 
     <!--This is used for validating some input forms-->
     <bean id="studentValidator" class="com.mitrais.validator.StudentValidator"/>
+    <bean id="fileValidator" class="com.mitrais.validator.FileValidator"/>
+
+    <!--This is for multipart file usage-->
+    <bean id = "multipartResolver"
+          class = "org.springframework.web.multipart.commons.CommonsMultipartResolver" />
 
     <!--This is to setting all static pages-->
     <mvc:resources mapping = "/pages/**" location = "/WEB-INF/pages/" />
+    <mvc:resources mapping = "/resources/**" location="/resources/theme01/" cache-period="31556926"/>
     <mvc:annotation-driven/>
 
 </beans>
