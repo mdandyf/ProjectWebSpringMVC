@@ -23,7 +23,7 @@ public class StudentController {
     private Validator validator;
 
     @InitBinder
-    private void initBinder(WebDataBinder binder) {
+    public void initBinder(WebDataBinder binder) {
         binder.setValidator(validator);
     }
 
@@ -38,7 +38,7 @@ public class StudentController {
     }
 
     @RequestMapping(value = "/addStudent", method = RequestMethod.POST)
-    public String addStudent(@ModelAttribute("student") @Validated Student student,
+    public String addStudent(@ModelAttribute("command") @Validated Student student,
                              BindingResult bindingResult, Model model) {
 
         if(bindingResult.hasErrors()) {

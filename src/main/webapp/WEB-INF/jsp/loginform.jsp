@@ -55,7 +55,7 @@
             <tr>
                 <td><form:label path="joinDate"> Join Date</form:label></td>
                 <td>
-                    <form:input type="text" id="joinDate" name="joinDate" path="joinDate"/>
+                    <form:input type="text" id="joinDate" name="joinDate" path="joinDate" placeholder="MM/dd/yyyy"/>
                 </td>
             </tr>
             <tr>

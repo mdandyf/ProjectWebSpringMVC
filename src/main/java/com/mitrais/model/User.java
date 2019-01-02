@@ -12,7 +12,8 @@ public class User {
     private String userNationality;
     private boolean receivePaper;
     private String[] knownFramework;
-    @DateTimeFormat(pattern = "MM-dd-yyyy")
+
+    @DateTimeFormat(pattern = "MM/dd/yyyy")
     private Date joinDate;
 
     public String getUserName() {
